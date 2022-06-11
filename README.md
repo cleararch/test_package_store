@@ -1,2 +1,0 @@
-# test_packeage_store
-在最初版编写过程中实验性的包仓库
