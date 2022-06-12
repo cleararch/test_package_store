@@ -1,5 +1,5 @@
-# Maintainer: Josip Ponjavic <josipponjavic at gmail dot com>
-# Contributor:
+# Maintainer: Jackey Zhao jackeyz2022@mail.ru
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
 
 ### BUILD OPTIONS
 # Set the next two variables to ANYTHING that is not null to enable them
