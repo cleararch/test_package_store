@@ -1,4 +1,4 @@
-# Maintainer: Jackey Zhao jackeyz2022@mail.ru
+# Maintainer: Cleararch group <jackeyz2022@mail.ru>
 # Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
 
 ### BUILD OPTIONS
@@ -62,7 +62,7 @@
 #  39. Generic-x86-64-v4 (GENERIC_CPU4)
 #  40. Intel-Native optimizations autodetected by GCC (MNATIVE_INTEL)
 #  41. AMD-Native optimizations autodetected by GCC (MNATIVE_AMD)
-: "${_subarch:=""}"
+_subarch:="36"
 
 # Use the current kernel's .config file
 # Enabling this option will use the .config of the RUNNING kernel rather than
