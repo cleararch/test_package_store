@@ -1,28 +1,20 @@
-# Maintainer: Chocobo1 <chocobo1 AT archlinux DOT net>
+# Maintainer: Cleararch Group <jackeyz2022@mail.ru>
+# Contributor: Chocobo1 <chocobo1 AT archlinux DOT net>
 
-pkgname=dpkg-git
-pkgver=1.19.4.r5.g42bf88145
+pkgname=dpkg
+pkgver=1.21.1ubuntu2.1
 pkgrel=1
-pkgdesc="Debian package management system"
+pkgdesc="Ubuntu(A Branch of Debian) package management system"
 arch=('i686' 'x86_64')
-url="https://tracker.debian.org/pkg/dpkg"
+url="https://packages.ubuntu.com/jammy-updates/dpkg"
 license=('GPL')
-depends=('glibc' 'bzip2' 'perl' 'xz' 'zlib')
+depends=('glibc' 'bzip2' 'perl' 'xz' 'zlib' 'zstd')
 makedepends=('git' 'perl-io-string' 'perl-timedate')
-provides=('dpkg')
-conflicts=('dpkg')
-source=("git+https://git.dpkg.org/git/dpkg/dpkg.git")
+source=("http://mirrors.163.com/ubuntu/pool/main/d/dpkg/dpkg_1.21.1ubuntu2.1.tar.xz")
 sha256sums=('SKIP')
 
-
-pkgver() {
-  cd "dpkg"
-
-  git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}
-
 build() {
-  cd "dpkg"
+  cd "dpkg-"$pkgver
 
   ./autogen
   ./configure \
@@ -35,7 +27,7 @@ build() {
 }
 
 package() {
-  cd "dpkg"
+  cd "dpkg-"$pkgver
 
   make DESTDIR="$pkgdir" install
 
