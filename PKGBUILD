@@ -82,9 +82,9 @@ _subarch:="36"
 ### IMPORTANT: Do no edit below this line unless you know what you're doing
 
 _major=5.18
-_minor=3
+_minor=10
 _srcname=linux-${_major}
-_clr=${_major}.2-1151
+_clr=${_major}.9-1159
 pkgbase=linux-clear
 pkgver=${_major}.${_minor}
 pkgrel=1
@@ -211,6 +211,10 @@ prepare() {
 
     # Library routines
     scripts/config --enable FONT_TER16x32
+
+    # Enable Boot in RAID0 disk
+    scripts/config --set-var RAID0_ALT_MULTIZONE_LAYOUT=2
+    scripts/config --set-var RAID0_ORIG_LAYOUT=1
 
     if [ -n "$_use_llvm_lto" ]; then
         scripts/config --disable LTO_NONE \
@@ -418,7 +422,7 @@ done
 
 sha256sums=('51f3f1684a896e797182a0907299cc1f0ff5e5b51dd9a55478ae63a409855cee'
             'SKIP'
-            '93fea9819fbeb863d11423e7e62266b1479e8df017834e554c21cea448e7b9b9'
+            'a41da15f2f0130a6822ae6d9a47196740199ddc6a35317f72a2a6b7a1997cf31'
             'SKIP'
             '5a29d172d442a3f31a402d7d306aaa292b0b5ea29139d05080a55e2425f48c5c'
             'c19a16f7cd760d79016c5108ae5d655d7f785d093edb4a186f69531f65889197'
